@@ -15,8 +15,13 @@ public class CourseRegistry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;//no need to provide value for this
-
     private String name;
     private String emailId;
     private String courseName;
+
+    public CourseRegistry(String name, String emailId, String courseName) {
+        this.name = name;
+        this.emailId = emailId;
+        this.courseName = courseName;
+    }
 }
