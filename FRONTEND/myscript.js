@@ -1,5 +1,5 @@
 function showCourse(){
-  fetch("https://localhost:8080/courses")//API Endpoint
+  fetch("http://localhost:8080/courses")//API Endpoint
   .then((response) => response.json())
   .then((courses) => {
     const dataTable = document.getElementById("coursetable")
@@ -17,7 +17,7 @@ function showCourse(){
 }
 
 function showEnrolledStudents(){
-   fetch("https://localhost:8080/courses/enrolled")//API Endpoint
+   fetch("http://localhost:8080/courses/enrolled")//API Endpoint
   .then((response) => response.json())// HTTP response into json object
   .then((students) => {
     const dataTable = document.getElementById("enrolledtable")
@@ -25,8 +25,7 @@ function showEnrolledStudents(){
       var row = `<tr>
       <td>${student.name}</td>
       <td>${student.emailId}</td>
-      <td>${}</td>
-      <td>${course.durationInWeeks}</td>
+      <td>${student.courseName}</td>
       </tr>`
       
       dataTable.innerHTML += row;
